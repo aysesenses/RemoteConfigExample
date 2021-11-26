@@ -1,18 +1,19 @@
 package com.aysesenses.remoteconfigexample
 
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 
-class MainViewModel : ViewModel() {
+object RemoteConfigUtils {
 
-    private val TAG = "RemoteConfigUtils"
+    private const val TAG = "RemoteConfigUtils"
 
-    private val BUTTON_TEXT = "button_text"
-    private val BUTTON_COLOR = "button_color"
+    private const val BUTTON_TEXT = "button_text"
+    private const val BUTTON_COLOR = "button_color"
+
+   private lateinit var remoteConfig: FirebaseRemoteConfig
 
     private val DEFAULTS: HashMap<String, Any> =
         hashMapOf(
@@ -20,9 +21,8 @@ class MainViewModel : ViewModel() {
             BUTTON_COLOR to "#FF03DAC5"
         )
 
-    private var remoteConfig: FirebaseRemoteConfig
 
-    init {
+    fun init() {
         remoteConfig = getFirebaseRemoteConfig()
     }
 
@@ -47,7 +47,7 @@ class MainViewModel : ViewModel() {
                         Log.d(TAG, "colorName: $colorName")
                     }
                     else -> {
-                        Log.d(TAG, "Fetch Failed")
+                        Log.d(TAG, "Fetch failed")
                     }
                 }
 
@@ -56,9 +56,8 @@ class MainViewModel : ViewModel() {
         return remoteConfig
     }
 
-    fun getButtonText(): String = remoteConfig.getString(BUTTON_TEXT)
+    fun getNextButtonText(): String = remoteConfig.getString(BUTTON_TEXT)
 
-    fun getButtonColor(): String = remoteConfig.getString(BUTTON_COLOR)
+    fun getNextButtonColor(): String = remoteConfig.getString(BUTTON_COLOR)
 
 }
-

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "305914383678",
+    "project_id": "remoteconfigexample-ce56b",
+    "storage_bucket": "remoteconfigexample-ce56b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305914383678:android:cc12e3bdb4f81bdfd9306f",
+        "android_client_info": {
+          "package_name": "com.aysesenses.remoteconfigexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305914383678-l8kp3gtl14vgf3pns8tdn4mquutaefgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8GrNf6X89HhnyIdYJGYEcZGZ6aGy73vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305914383678-l8kp3gtl14vgf3pns8tdn4mquutaefgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
